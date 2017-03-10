@@ -1,0 +1,3 @@
+.jsbeautifyrc
+voting-server/node_modules/
+*.log
