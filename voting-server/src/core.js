@@ -1,5 +1,13 @@
 import { List, Map } from 'immutable';
 
+/* a state:
+{
+  entries:['A'],
+  vote: {
+    pair: ['B', 'C'],
+    tally: {'B': 1}
+  }
+}*/
 export const INITIAL_STATE = Map();
 
 /* set entries of the state */
@@ -36,6 +44,6 @@ export function next(state) {
 
 /* updating the active voting entries in the state, initialized with a tally of 0,
 increment the tally if an entry is voted */
-export function vote(state, entry) {
-  return state.updateIn(['vote', 'tally', entry], 0, val => val + 1);
+export function vote(voteState, entry) {
+  return voteState.updateIn(['tally', entry], 0, val => val + 1);
 }
