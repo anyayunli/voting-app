@@ -1,3 +1,4 @@
 .jsbeautifyrc
-voting-server/node_modules/
+*/node_modules/
 *.log
+*bundle.js
