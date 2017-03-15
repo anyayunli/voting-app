@@ -1,6 +1,6 @@
 import React from 'react';
-import Winner from './winner';
-import Vote from './vote';
+import Winner from './Winner';
+import Vote from './Vote';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 export default React.createClass({
