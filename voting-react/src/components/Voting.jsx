@@ -1,8 +1,9 @@
 import React from 'react';
-import Winner from './Winner';
-import Vote from './Vote';
 import {connect} from 'react-redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import Winner from './Winner';
+import Vote from './Vote';
+import * as actionCreators from '../action_creators';
 
 export const Voting = React.createClass({
   mixins : PureRenderMixin,
@@ -18,6 +19,7 @@ export const Voting = React.createClass({
 function mapStateToProps(state) {
   return {
     pair: state.getIn(['vote', 'pair']),
+    hasVoted: state.get('hasVoted'),
     winner: state.get('winner')
   };
 }
@@ -27,4 +29,4 @@ function mapStateToProps(state) {
  * component and the latter a "smart" component. The connected/smart component, 
  * wraps the pure version with some logic that will keep it in sync with the changing
  *  state of the Redux Store*/
-export const VotingContainer = connect(mapStateToProps)(Voting);
+export const VotingContainer = connect(mapStateToProps, actionCreators)(Voting);
