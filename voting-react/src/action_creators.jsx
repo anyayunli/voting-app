@@ -12,3 +12,10 @@ export function vote(entry) {
     entry
   }
 }
+
+export function next() {
+  return {
+    type: 'NEXT',
+    meta: { remote: true }
+  }
+}
