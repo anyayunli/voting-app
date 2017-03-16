@@ -39,7 +39,6 @@ export const Results = React.createClass({
 })
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     winner: state.get('winner'),
     tally: state.getIn(['vote', 'tally']),
